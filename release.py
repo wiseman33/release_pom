@@ -60,5 +60,5 @@ print('Jiras included to release: {0}'.format(new_tag_message))
 tag_name = 'Release_{0}'.format(new_version)
 print('Creating release tag {0} ...'.format(tag_name))
 
-#new_tag = repo.create_tag(tag_name)
-#repo.remotes.origin.push(new_tag, message=new_tag_message)
+new_tag = repo.create_tag(tag_name)
+repo.remotes.origin.push(new_tag, message=new_tag_message)
