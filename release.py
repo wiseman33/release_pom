@@ -53,7 +53,7 @@ if repo.tags:
             if jiras[0] not in new_jiras:
                 new_jiras[jiras[0]] = commit.message
         
-new_tag_message = ';'.join(str(key) for key in new_jiras)
+new_tag_message = '\"{0}\"'.format(';'.join(str(key) for key in new_jiras))
 
 print('Jiras included to release: {0}'.format(new_tag_message))
 
