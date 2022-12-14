@@ -53,12 +53,12 @@ if repo.tags:
             if jiras[0] not in new_jiras:
                 new_jiras[jiras[0]] = commit.message
         
-new_tag_message = '\"{0}\"'.format(';'.join(str(key) for key in new_jiras))
+new_tag_message = '\'{0}\''.format(';'.join(str(key) for key in new_jiras))
 
 print('Jiras included to release: {0}'.format(new_tag_message))
 
 tag_name = 'Release_{0}'.format(new_version)
 print('Creating release tag {0} ...'.format(tag_name))
 
-new_tag = repo.create_tag(tag_name)
-repo.remotes.origin.push(new_tag, message=new_tag_message)
+new_tag = repo.create_tag(tag_name,  message=new_tag_message)
+repo.remotes.origin.push(new_tag)
